@@ -6,5 +6,10 @@ namespace Zoo
 {
     public class Grass : FoodItem
     {
+
+        public Grass(float foodValue) 
+        {
+            FoodValue = foodValue;
+        }
     }
 }

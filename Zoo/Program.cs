@@ -1,8 +1,20 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace Zoo
 {
+    // LESSON THINGY
+    // extension:
+    public static class ListExtensions
+    {
+        public static int NumberOfAnimalsOfType<T, Tcheck>(this IList<T> list)
+        {
+            return list.OfType<Tcheck>().Count();
+        }
+    }
+
+
     class Program
     {
         static void Main(string[] args)
@@ -10,20 +22,29 @@ namespace Zoo
             // The zoo now is only a list of animals which have no cages of whatever. Every Animal can interact with any other. 
             // This is probably not going to work out well...
 
-            List<Animal> Zoo = new List<Animal>();
 
-            
+
+            List<Animal> AnimalsInZoo = new List<Animal>();
+
+
             // Herbivores
             Bunny Bella = new Bunny("Bella", 4, 2, Animal.ESex.female, 0);
-            Zoo.Add(Bella);
+            AnimalsInZoo.Add(Bella);
             Zebra Zali = new Zebra("Zali", 4, 400, Animal.ESex.female, 0);
-            Zoo.Add(Zali);
+            AnimalsInZoo.Add(Zali);
             // Carnivores
 
-            Tiger Timmy = new Tiger("Timmy", 4, 300, Animal.ESex.male, 0);
-            Zoo.Add(Timmy);
+            Tiger Timmy = new Tiger("Timmy", 4, 400, Animal.ESex.male, 0.7f, 0);
+            AnimalsInZoo.Add(Timmy);
 
 
+
+
+            List<FoodItem> AvailableFood = new List<FoodItem>();
+
+            Grass StartingGrass = new Grass(150);
+
+            AvailableFood.Add(StartingGrass);
 
             /*
               There is a list of all available food in the zoo which every iteration is supplied with grass.
@@ -111,7 +132,9 @@ namespace Zoo
 
 
 
-
+            // LESSON THINGY
+            // extensions:
+            AnimalsInZoo.NumberOfAnimalsOfType<Animal, Tiger>();
 
         }
     }

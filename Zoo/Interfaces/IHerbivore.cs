@@ -6,6 +6,6 @@ namespace Zoo
 {
     public interface IHerbivore
     {
-        void Eat(Grass grass);
+        bool Eat(List<FoodItem> availableFood);
     }
 }

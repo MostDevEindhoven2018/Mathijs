@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Zoo
 {
-    public class Meat : FoodItem
+    public static class FoodManager
     {
-        public Meat(float foodValue)
+        public static void CheckAvailabilityOfFood(FoodItem food)
         {
-            FoodValue = foodValue;
+
         }
     }
 }

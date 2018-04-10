@@ -6,6 +6,6 @@ namespace Zoo
 {
     public abstract class FoodItem
     {
-        float FoodValue;
+        public float FoodValue { get; set; }
     }
 }
